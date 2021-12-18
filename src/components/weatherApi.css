@@ -2,7 +2,9 @@
     width: 460px;
     height: 600px;
     margin: 2rem auto;
-    background-image: url('../assets/img/cloud.jpeg');
+    background-image: linear-gradient(to bottom, #e2dacc63,
+    rgba(0, 0, 0, 0.5)),
+     url('../assets/img/cloud.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     transition: 0.2s ease;
@@ -37,7 +39,14 @@
     min-height: 100vh;
     padding: 25px;
   }
-  
+  .main-theme {
+    text-align: center;
+    color:#fff;
+    font-size: 44px;
+    font-weight: bold;
+    padding-top: 90px;
+    
+  }
   .search-container {
     width: 100%;
     margin: 0 0 75px;
@@ -96,3 +105,38 @@
     font-weight: bold;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
   }
+
+  .icons {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 44px;
+    
+  }
+
+  h2 {
+    border-right: 1px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 2s steps(25) 1s 1 normal both;
+  }
+  @keyframes typewriter {
+    0% {
+      width: 0;
+      border-right: none;
+    }
+    0.1% {
+      border-right: 1px solid rgb(220,220,220);
+    }
+    99.9% {
+      border-right: 1px solid rgb(220,220,220);
+    }
+    100% {
+      border: none;
+    }
+  }
+  

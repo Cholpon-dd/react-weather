@@ -1,6 +1,11 @@
 import React, {useState} from 'react'
 import keys from '../keys'
 import './weatherApi.css';
+import {TiWeatherCloudy} from 'react-icons/ti'
+import {TiWeatherSunny} from 'react-icons/ti'
+import {TiWeatherShower} from 'react-icons/ti'
+import {TiWeatherSnow} from 'react-icons/ti'
+import {TiWeatherPartlySunny} from 'react-icons/ti'
 
 const api = {
   key: keys.API_KEY,
@@ -10,7 +15,7 @@ function WeatherApi() {
 
   const dataBuild = (d) => {
     let date = String(new window.Date())
-    date = date.slice(3, 15);  // вырезает месяц, число, год
+    date = date.slice(3, 15);  
     return date
   }
 
@@ -27,6 +32,7 @@ function WeatherApi() {
        })
     }
   }
+
   return (
     <div className={
       typeof weather.main != "undefined" ? weather.main.temp > 18 ? "WeatherApi hot" : "WeatherApi cold" : "WeatherApi"}>
@@ -34,7 +40,7 @@ function WeatherApi() {
         <div className="search-container">
         <input className="search-bar"
         type="text" 
-        placeholder="Search..."
+        placeholder="Search city"
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         onKeyPress={search}
@@ -60,7 +66,14 @@ function WeatherApi() {
            </div>
          </div>  
           ) : (
-            ""
+            <>
+            <h2 className="main-theme">Weather Forecast</h2>
+            <TiWeatherCloudy className='icons'/>
+            <TiWeatherSunny className='icons'/>
+            <TiWeatherShower className='icons'/>
+            <TiWeatherPartlySunny className='icons'/>
+            <TiWeatherSnow className='icons'/>
+            </>
           )}
       </main>   
     </div>
