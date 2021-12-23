@@ -1,17 +1,29 @@
-import React, {useState} from 'react'
-import keys from '../keys'
+import React, { useState, useEffect, useRef } from 'react';
+import keys from '../keys';
 import './weatherApi.css';
-import {TiWeatherCloudy} from 'react-icons/ti'
-import {TiWeatherSunny} from 'react-icons/ti'
-import {TiWeatherShower} from 'react-icons/ti'
-import {TiWeatherSnow} from 'react-icons/ti'
-import {TiWeatherPartlySunny} from 'react-icons/ti'
+import { init } from 'ityped';
+import { TiWeatherCloudy } from 'react-icons/ti';
+import { TiWeatherSunny } from 'react-icons/ti';
+import { TiWeatherShower } from 'react-icons/ti';
+import { TiWeatherSnow } from 'react-icons/ti';
+import { TiWeatherPartlySunny } from 'react-icons/ti';
 
 const api = {
   key: keys.API_KEY,
   base: keys.BASE_URL
 }
 function WeatherApi() {
+
+  const animatedTextRef = useRef();
+
+  useEffect(() => {
+    init(animatedTextRef.current, {
+      showCursor: false,
+      backDelay: 1600,
+      backSpeed: 60,
+      strings: ['Weather Forecast'],
+    })
+  },[])
 
   const dataBuild = (d) => {
     let date = String(new window.Date())
@@ -67,7 +79,8 @@ function WeatherApi() {
          </div>  
           ) : (
             <>
-            <h2 className="main-theme">Weather Forecast</h2>
+            <h2 ref={animatedTextRef} className="main-theme">
+            </h2>
             <TiWeatherCloudy className='icons'/>
             <TiWeatherSunny className='icons'/>
             <TiWeatherShower className='icons'/>

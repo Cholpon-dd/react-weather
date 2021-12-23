@@ -42,11 +42,11 @@
   .main-theme {
     text-align: center;
     color:#fff;
-    font-size: 44px;
+    font-size: 40px;
     font-weight: bold;
-    padding-top: 90px;
-    
+    padding-top: 90px; 
   }
+  
   .search-container {
     width: 100%;
     margin: 0 0 75px;
@@ -115,28 +115,4 @@
     
   }
 
-  h2 {
-    border-right: 1px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 400px;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typewriter 2s steps(25) 1s 1 normal both;
-  }
-  @keyframes typewriter {
-    0% {
-      width: 0;
-      border-right: none;
-    }
-    0.1% {
-      border-right: 1px solid rgb(220,220,220);
-    }
-    99.9% {
-      border-right: 1px solid rgb(220,220,220);
-    }
-    100% {
-      border: none;
-    }
-  }
-  
+ 
